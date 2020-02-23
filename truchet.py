@@ -40,6 +40,13 @@ def windmill_scheme(tile, i, x, y):
         t = t.rotate(180)
     return t
 
+def burst_scheme(tile, i, x, y):
+    t = tile.rotate(-90)
+    x_rotation = 90 * (x % 4) * (-1 if (y % 2 == 1) else 1)
+    y_rotation = -90 * (y % 4)
+    t = t.rotate(x_rotation + y_rotation)
+    return t
+
 def main():
     argparser = ArgumentParser()
     argparser.add_argument('-t', '--tile', help='the tile file to use', type=str, required=True)
@@ -64,6 +71,7 @@ def main():
         'standard': lambda i, x, y: tile,
         'random': lambda i, x, y: tile.rotate(90 * random.randrange(0, 3)),
         'windmill': lambda i, x, y: windmill_scheme(tile, i, x, y),
+        'burst': lambda i, x, y: burst_scheme(tile, i, x, y),
         'rotate90': lambda i, x, y: tile.rotate(90 * i),
         'rotate180': lambda i, x, y: tile.rotate(180 * i),
         'rotate270': lambda i, x, y: tile.rotate(270 * i),
