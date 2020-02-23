@@ -51,6 +51,7 @@ def main():
         sys.exit(1)
     if not os.path.isdir(args.output_dir):
         print(f'Not a valid directory: {args.output_dir}')
+        sys.exit(1)
 
     tiles = []
     for (dirpath, dirnames, filenames) in os.walk(args.tile_dir):
