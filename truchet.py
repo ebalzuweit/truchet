@@ -63,7 +63,7 @@ def main():
     try:
         tile = Image.open(args.tile)
     except IOError:
-        print(f'Unable to open tile file: {tile_file}')
+        print(f'Unable to open tile file: {args.tile}')
         sys.exit(1)
     
     # build schemes
