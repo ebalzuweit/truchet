@@ -3,17 +3,9 @@ import random
 from PIL import Image
 from argparse import ArgumentParser
 
-def truchet(img_size, fct, output_file, output_size, DEBUG=False):
+def truchet(img_size, fct, output_file, output_size):
     output_file = output_file + '.png'
 
-    if DEBUG:
-        print(
-    f'''DEBUG:
-    scheme:         {scheme}
-    output_file:    {output_file}
-    width:          {width}
-    height:         {height}''')
-    
     # add one for remainder
     tx = output_size[0] // img_size[0] + 1
     ty = output_size[1] // img_size[1] + 1
