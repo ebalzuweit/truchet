@@ -30,7 +30,7 @@ def truchet(img_size, fct, output_file, output_size, DEBUG=False):
     output.save(output_file)
     print(f'saved to {output_file}')
 
-def alternate_scheme(tile, i, x, y):
+def windmill_scheme(tile, i, x, y):
     t = tile
     if x % 2 == 1:
         t = t.rotate(90)
@@ -63,7 +63,7 @@ def main():
     schemes = {
         'standard': lambda i, x, y: tile,
         'random': lambda i, x, y: tile.rotate(90 * random.randrange(0, 3)),
-        'alternate': lambda i, x, y: alternate_scheme(tile, i, x, y),
+        'windmill': lambda i, x, y: windmill_scheme(tile, i, x, y),
         'rotate90': lambda i, x, y: tile.rotate(90 * i),
         'rotate180': lambda i, x, y: tile.rotate(180 * i),
         'rotate270': lambda i, x, y: tile.rotate(270 * i),
