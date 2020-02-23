@@ -40,7 +40,7 @@ def burst_scheme(tile, i, x, y):
 
 def main():
     argparser = ArgumentParser()
-    argparser.add_argument('-t', '--tile_dir', help='tile directory', type=str, required=True)
+    argparser.add_argument('-t', '--tile_dir', help='tile directory, all .png files will be tiled', type=str, required=True)
     argparser.add_argument('-o', '--output_dir', help='output directory', type=str, default='./output')
     argparser.add_argument('-x', '--width', help='the width of the output images', type=int, default=512)
     argparser.add_argument('-y', '--height', help='the height of the output images', type=int, default=512)
