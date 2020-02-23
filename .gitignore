@@ -1,4 +1,5 @@
 /venv/*
 *.png
 !tiles/*.png
+!examples/*.png
 __pycache__/*
